@@ -1,0 +1,67 @@
+<div class="all">
+<app-navbar></app-navbar>
+    <div class="main">
+        <div class="container-main">
+            <div class="hero-msg">GET <div class="started">STARTED</div></div>
+            <div class="msg-h1">New to <div class="hero2">PAPER RINGS ?</div> Get Registered Below</div>
+            <button><a routerLink="new">NEW REGISTRATION</a></button>
+            <div class="mark">Already Registered ? <a routerLink="/mark">MARK ATTENDANCE</a></div>
+            <div class="table-container">
+                 <div class="hero">
+                    Heroes of Dawn
+                    </div>
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                        
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> ID </th>
+                            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+
+                        
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        
+                        <ng-container matColumnDef="email">
+                            <th mat-header-cell *matHeaderCellDef> Email </th>
+                            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                        </ng-container>
+
+                        
+                        <ng-container matColumnDef="phone">
+                            <th mat-header-cell *matHeaderCellDef> Phone </th>
+                            <td  mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                        </ng-container>                        
+
+                        <ng-container class="hero-33" matColumnDef="actions">
+                            <th mat-header-cell *matHeaderCellDef>Actions</th>
+                            <td mat-cell *matCellDef="let row">
+                            <a mat-button 
+                                routerLink="/update" [state]="{student: row}"
+                                >Edit
+                            </a> </td>
+                        </ng-container>
+
+                        <ng-container class="hero-333" matColumnDef="delete">
+                            <th mat-header-cell *matHeaderCellDef>Delete</th>
+                            <td mat-cell *matCellDef="let row">
+                            <a class="yrf" mat-button
+                                routerLink="/"
+                                (click)="onDelete(row.id)"
+                                >Delete 
+                            </a> </td>
+                        </ng-container>
+
+                        
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+            </div>
+        </div>
+    </div>
+<app-footer></app-footer>
+</div>

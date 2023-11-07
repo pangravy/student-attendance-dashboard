@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="all">    
+    <div class="main">
+        <div class="left">
+            <h1>Mark yourselves on the calender</h1>
+        </div>
+        <div class="right">
+            <div class="blur">
+                <div class="selection">
+                    <label for="userDropdown">Select User:</label>
+                    <select id="userDropdown" [(ngModel)]="selectedUserId" name="selectedUser"
+                        aria-controls="select-dropdown">
+                        <option value="" disabled>Select a user</option>
+                        <option *ngFor="let user of datas" [value]="user.id">{{ user.id }} : {{ user.name }}</option>
+                    </select>
+                    <button (click)="markAttendance()">Proceed</button>
+                </div>
+                <div class="calendar" *ngIf="!disabled">
+                    <div></div>
+
+                        <p-calendar class="max-w-full"  (onSelect)="handleDateSelection($event)" dateFormat="dd.mm.yy" [(ngModel)]="date" [inline]="false" [showWeek]="false" [showIcon]="true" [showButtonBar]="true"></p-calendar>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

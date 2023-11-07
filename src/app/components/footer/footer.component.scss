@@ -1,0 +1,20 @@
+.main{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+
+    padding: 0.8vw 0;
+    justify-content: center;
+    gap: 0.7vw;
+
+    .logo{
+  
+        font-family: 'Sofia';
+        font-size: 1.3vw;
+    }
+    .copyright{
+      
+        font-family: 'Gabarito';
+        font-size: 1vw;  
+    }
+}

@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="all">
+<div class="main">
+    <div class="page-div">
+        <form [formGroup]="inputForm">
+            <div class="form-title">Hello there !</div>
+            <input id="name" type="text" formControlName="name" placeholder="Name">
+            <input id="email" type="email" formControlName="email" placeholder="Email">
+            <input id="phone" type="text" formControlName="phone" placeholder="Phone Number">
+            <button class="enroll" (click)="enroll()">ENROLL</button>
+        </form>
+
+    </div>
+</div>
+<app-footer></app-footer>
+</div>

@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="left">
+    <h1>Hero presents</h1>
+<div class="table-container">
+    <div class="hero">
+
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="stats">
+                <th mat-header-cell *matHeaderCellDef> Stats </th>
+                <td mat-cell *matCellDef="let element">{{ getclass(element.stats) }}</td>
+            </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </div>
+</div>
+</div>
